@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wez-Oi-eku">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Up View Controller-->
+        <scene sceneID="3vR-g3-StH">
+            <objects>
+                <viewController id="wez-Oi-eku" customClass="PopUpViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jwy-Eh-0PW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zs3-mv-R4n">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgW-vE-0Ez">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <color key="backgroundColor" red="0.38823529410000002" green="0.52156862749999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="CWt-KR-h8d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aTM-fz-uAx">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="148"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="148" id="wCp-fK-er1"/>
+                                        </constraints>
+                                        <locale key="locale" localeIdentifier="ru"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrC-NM-ov0">
+                                        <rect key="frame" x="125" y="206" width="50" height="30"/>
+                                        <color key="backgroundColor" red="0.38823529410000002" green="0.52156862749999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="FGm-Em-uGh"/>
+                                        </constraints>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="wez-Oi-eku" eventType="touchUpInside" id="ZZe-wc-Omz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EgW-vE-0Ez" firstAttribute="top" secondItem="Zs3-mv-R4n" secondAttribute="top" id="9dc-vg-glN"/>
+                                    <constraint firstAttribute="trailing" secondItem="aTM-fz-uAx" secondAttribute="trailing" id="NbI-gz-3xh"/>
+                                    <constraint firstAttribute="trailing" secondItem="EgW-vE-0Ez" secondAttribute="trailing" id="Oce-bS-bEW"/>
+                                    <constraint firstItem="TrC-NM-ov0" firstAttribute="top" secondItem="aTM-fz-uAx" secondAttribute="bottom" constant="8" symbolic="YES" id="SjG-EM-OpH"/>
+                                    <constraint firstItem="aTM-fz-uAx" firstAttribute="leading" secondItem="Zs3-mv-R4n" secondAttribute="leading" id="VhR-z3-Ip3"/>
+                                    <constraint firstItem="aTM-fz-uAx" firstAttribute="top" secondItem="EgW-vE-0Ez" secondAttribute="bottom" id="YI8-XO-dad"/>
+                                    <constraint firstAttribute="width" constant="300" id="dSD-9J-MI7"/>
+                                    <constraint firstAttribute="height" constant="250" id="ig5-4d-kTM"/>
+                                    <constraint firstItem="aTM-fz-uAx" firstAttribute="centerX" secondItem="TrC-NM-ov0" secondAttribute="centerX" id="tc5-4A-LWG"/>
+                                    <constraint firstItem="EgW-vE-0Ez" firstAttribute="leading" secondItem="Zs3-mv-R4n" secondAttribute="leading" id="vP4-ic-3qY"/>
+                                    <constraint firstItem="TrC-NM-ov0" firstAttribute="centerX" secondItem="Zs3-mv-R4n" secondAttribute="centerX" id="xS5-bt-eoK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Zs3-mv-R4n" firstAttribute="centerX" secondItem="Jwy-Eh-0PW" secondAttribute="centerX" id="F5l-ue-Cdv"/>
+                            <constraint firstItem="Zs3-mv-R4n" firstAttribute="centerY" secondItem="Jwy-Eh-0PW" secondAttribute="centerY" id="nRT-J7-w0d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sx4-xq-s8H"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bfw-Ga-lPB"/>
+                    <connections>
+                        <outlet property="addButton" destination="TrC-NM-ov0" id="7H2-hs-7IJ"/>
+                        <outlet property="backView" destination="Zs3-mv-R4n" id="YA4-tK-aSC"/>
+                        <outlet property="datePicker" destination="aTM-fz-uAx" id="U1a-Q3-ctG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uB7-TL-7j2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.913043478261" y="860.49107142857144"/>
+        </scene>
+    </scenes>
+</document>

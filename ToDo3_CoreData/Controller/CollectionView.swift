@@ -36,7 +36,9 @@ class CollectionView: UICollectionView, UICollectionViewDataSource{
         cell.layer.shadowRadius = 5
         cell.layer.shadowOffset = .zero
         
-        cell.label.text = "text"
+        cell.categoryTitle.text = "ALL"
+        cell.countTask.text = "25 tasks"
+        cell.image.image = UIImage(named: "homeImage")
         
         return cell
     }
@@ -51,7 +53,7 @@ class CollectionView: UICollectionView, UICollectionViewDataSource{
 }
 extension UICollectionView: UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: collectionView.frame.width / 3, height: 150)
+        return .init(width: collectionView.frame.width / 2.5, height: 175)
     }
 }
 

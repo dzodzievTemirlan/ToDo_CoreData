@@ -17,6 +17,12 @@
 		794F0F47248FB15C006EECA1 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F46248FB15C006EECA1 /* ReusableCell.swift */; };
 		794F0F49248FB188006EECA1 /* ReusableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F48248FB188006EECA1 /* ReusableHeader.swift */; };
 		794F0F4B248FC6AE006EECA1 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F4A248FC6AE006EECA1 /* CollectionView.swift */; };
+		794F0F4F2490ADCF006EECA1 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F4E2490ADCF006EECA1 /* TableView.swift */; };
+		794F0F512490ADFB006EECA1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F502490ADFB006EECA1 /* SecondViewController.swift */; };
+		794F0F532490F8CC006EECA1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F522490F8CC006EECA1 /* TableViewCell.swift */; };
+		794F0F552492052C006EECA1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F542492052C006EECA1 /* AddViewController.swift */; };
+		79BA2A312492AA10006DE940 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA2A302492AA10006DE940 /* PopUpViewController.swift */; };
+		79BA2A332492B4CD006DE940 /* PopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BA2A322492B4CD006DE940 /* PopUp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		794F0F46248FB15C006EECA1 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		794F0F48248FB188006EECA1 /* ReusableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableHeader.swift; sourceTree = "<group>"; };
 		794F0F4A248FC6AE006EECA1 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		794F0F4E2490ADCF006EECA1 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		794F0F502490ADFB006EECA1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		794F0F522490F8CC006EECA1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		794F0F542492052C006EECA1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		79BA2A302492AA10006DE940 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		79BA2A322492B4CD006DE940 /* PopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +91,11 @@
 		794F0F4C248FC821006EECA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				79BA2A302492AA10006DE940 /* PopUpViewController.swift */,
+				794F0F542492052C006EECA1 /* AddViewController.swift */,
+				794F0F4E2490ADCF006EECA1 /* TableView.swift */,
 				794F0F31248FA9F2006EECA1 /* ViewController.swift */,
+				794F0F502490ADFB006EECA1 /* SecondViewController.swift */,
 				794F0F4A248FC6AE006EECA1 /* CollectionView.swift */,
 			);
 			path = Controller;
@@ -88,7 +104,9 @@
 		794F0F4D2490280D006EECA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79BA2A322492B4CD006DE940 /* PopUp.storyboard */,
 				794F0F33248FA9F2006EECA1 /* Main.storyboard */,
+				794F0F522490F8CC006EECA1 /* TableViewCell.swift */,
 				794F0F46248FB15C006EECA1 /* ReusableCell.swift */,
 				794F0F48248FB188006EECA1 /* ReusableHeader.swift */,
 			);
@@ -156,6 +174,7 @@
 				794F0F3D248FA9F4006EECA1 /* LaunchScreen.storyboard in Resources */,
 				794F0F3A248FA9F4006EECA1 /* Assets.xcassets in Resources */,
 				794F0F35248FA9F2006EECA1 /* Main.storyboard in Resources */,
+				79BA2A332492B4CD006DE940 /* PopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +188,13 @@
 				794F0F32248FA9F2006EECA1 /* ViewController.swift in Sources */,
 				794F0F47248FB15C006EECA1 /* ReusableCell.swift in Sources */,
 				794F0F4B248FC6AE006EECA1 /* CollectionView.swift in Sources */,
+				794F0F552492052C006EECA1 /* AddViewController.swift in Sources */,
+				794F0F512490ADFB006EECA1 /* SecondViewController.swift in Sources */,
 				794F0F2E248FA9F2006EECA1 /* AppDelegate.swift in Sources */,
+				794F0F532490F8CC006EECA1 /* TableViewCell.swift in Sources */,
+				79BA2A312492AA10006DE940 /* PopUpViewController.swift in Sources */,
 				794F0F38248FA9F2006EECA1 /* ToDo3_CoreData.xcdatamodeld in Sources */,
+				794F0F4F2490ADCF006EECA1 /* TableView.swift in Sources */,
 				794F0F49248FB188006EECA1 /* ReusableHeader.swift in Sources */,
 				794F0F30248FA9F2006EECA1 /* SceneDelegate.swift in Sources */,
 			);

@@ -10,23 +10,30 @@ import UIKit
 
 class ReusableCell: UICollectionViewCell{
     
-    @IBOutlet weak var categoryTitle: UILabel!
-    @IBOutlet weak var taskcount: UILabel!
+    let image = UIImageView(frame: CGRect(x: 10, y: 20, width: 50, height: 50))
+    let categoryTitle = UILabel(frame: CGRect(x: 13, y: 70, width: 50, height: 50))
+    let countTask = UILabel(frame: CGRect(x: 13, y: 95, width: 50, height: 50))
     
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
-    
-        label.tintColor = .black
-        label.font = .systemFont(ofSize: 25)
         
-        addSubview(label)
+        reusecell()
         
     }
     
     
-    
+    fileprivate func reusecell() {
+        categoryTitle.tintColor = .black
+        categoryTitle.font = .boldSystemFont(ofSize: 16)
+        countTask.tintColor = .black
+        countTask.font = .systemFont(ofSize: 12)
+        addSubview(categoryTitle)
+        addSubview(countTask)
+        addSubview(image)
+        
+    }
     
     
     

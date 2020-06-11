@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     fileprivate func paddindCells() {
         if let layout = collectionViewOutlet.collectionViewLayout as? UICollectionViewFlowLayout{
-            let padding:CGFloat = 30
+            let padding:CGFloat = 20
             layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
             layout.minimumLineSpacing = 30
 
