@@ -40,12 +40,12 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
         let swipe = UISwipeActionsConfiguration(actions: [delete])
         return swipe
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        
-        
-        
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        
+//        
+//        
+//        
+//    }
     
     private func dateFormater(task: [CatTask],_ index: IndexPath)->String{
         guard let currentDate = task[index.row].date else{return "0"}
