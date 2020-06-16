@@ -112,19 +112,15 @@ class CoreDataManager {
         }
         
     }
-    
-    func deleteTask(_ task: CatTask, _ categoryName: String){
-        
-        fetchTask(categoryName) { (taskSet) in
-            guard let taskList = taskSet else{return}
-            for tskOne in taskList where tskOne == task{
-                
-                do{
-                    tskOne.managedObjectContext?.delete(tskOne)
-                }catch{
-                    print("Error delete Task")
-                }
-            }
+    func deleteTask(_ task:CatTask){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+             let context = appDelegate.persistentContainer.viewContext
+        context.delete(task)
+        do{
+            try context.save()
+        }catch{
+            print("error with delete")
         }
+
     }
 }

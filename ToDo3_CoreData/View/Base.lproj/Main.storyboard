@@ -65,7 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ORC-Gs-FuC"/>
                     <connections>
-                        <outlet property="addButton" destination="Ebu-oF-a4w" id="LgD-V5-zbd"/>
+                        <outlet property="addButton" destination="Ebu-oF-a4w" id="kYD-i5-lzz"/>
                         <outlet property="collectionViewOutlet" destination="wsH-n6-mvg" id="7ic-MX-4tv"/>
                     </connections>
                 </viewController>

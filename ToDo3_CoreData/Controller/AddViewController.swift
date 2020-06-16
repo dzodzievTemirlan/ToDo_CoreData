@@ -48,6 +48,8 @@ class AddViewController: UIViewController {
         textField.resignFirstResponder()
         saveAction()
         navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name:Notification.Name(rawValue: updateTableViewKey), object: nil)
+        
     }
     
     func saveAction(){

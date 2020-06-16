@@ -34,7 +34,7 @@ class ViewController: UIViewController {
                 self.collectionView.items = self.items
             }
         }
-                print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        //                print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     fileprivate func paddindCells() {
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.tintColor = .white
         
     }
     

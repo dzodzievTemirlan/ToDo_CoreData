@@ -24,6 +24,7 @@ class SecondViewController: UIViewController{
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
     @IBOutlet weak var addButtonOutlet: UIButton!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -33,14 +34,13 @@ class SecondViewController: UIViewController{
         tableViewOutlet.delegate = tableViewClass
         tableViewOutlet.dataSource = tableViewClass
         tableViewClass.taskTitle = catTitle
-//        categoryImage.layer.cornerRadius = categoryImage.frame.height / 2
         guard let currentTitle = categoryTitle.text else {return}
         coreDataManager.fetchTask(currentTitle) { (tasks) in
             self.tableViewClass.tasksLast = tasks
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: Notification.Name(updateTableViewKey), object: nil)
-        
     }
+    
     
     func headerTitles(_ label: String?, _ image: String?){
         
@@ -53,11 +53,15 @@ class SecondViewController: UIViewController{
         tableViewOutlet.layer.cornerRadius = 20
     }
     @objc func updateTable(_ notification: Notification){
+        guard let currentTitle = categoryTitle.text else {return}
+        coreDataManager.fetchTask(currentTitle) { (tasks) in
+            self.tableViewClass.tasksLast = tasks
+        }
         tableViewOutlet.reloadData()
-        print("1")
+        
     }
     
-  
+    
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -27,16 +27,27 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
         cell.taskNumber = tasksLast[indexPath.row]
         cell.categoryName = taskTitle
         cell.checkboxOutlet.setImage(UIImage(named: checkboxImage(tasksLast, indexPath)), for: .normal)
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let titleTask = taskTitle else {return}
-        coreDataManager.deleteTask(tasksLast[indexPath.row], titleTask)
-        tableView.reloadData()
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, complition) in
+            self.coreDataManager.deleteTask(self.tasksLast[indexPath.row])
+            complition(true)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: updateTableViewKey), object: nil)
+        }
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
+        
+        
     }
     
-   private func dateFormater(task: [CatTask],_ index: IndexPath)->String{
+    private func dateFormater(task: [CatTask],_ index: IndexPath)->String{
         guard let currentDate = task[index.row].date else{return "0"}
         let dateFormater = DateFormatter()
         dateFormater.timeZone = TimeZone(abbreviation: "MSK")
@@ -59,4 +70,4 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
     }
     
 }
- 
+

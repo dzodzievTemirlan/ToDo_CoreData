@@ -71,7 +71,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.52156862749999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="8GN-OT-DBa"/>
                                             <constraint firstItem="3Lv-oC-Dnf" firstAttribute="leading" secondItem="7Ct-jP-zPN" secondAttribute="leading" id="MKt-gb-dq1"/>
+                                            <constraint firstAttribute="height" constant="346" id="NsK-cT-3Ri"/>
                                             <constraint firstAttribute="bottom" secondItem="3Lv-oC-Dnf" secondAttribute="bottom" id="YdW-Dd-g7k"/>
                                             <constraint firstItem="3Lv-oC-Dnf" firstAttribute="top" secondItem="7Ct-jP-zPN" secondAttribute="top" id="gpw-P8-7Z4"/>
                                             <constraint firstAttribute="trailing" secondItem="3Lv-oC-Dnf" secondAttribute="trailing" id="tNB-tb-JL6"/>
@@ -230,6 +232,7 @@
                         <outlet property="addButtonOutlet" destination="PCs-Eq-1RM" id="5DH-e9-RSU"/>
                         <outlet property="categoryImage" destination="wZS-4I-5bd" id="khq-EH-jvo"/>
                         <outlet property="categoryTitle" destination="ZBU-Vr-F8r" id="DbH-Sb-6Yk"/>
+                        <outlet property="headerHeight" destination="NsK-cT-3Ri" id="rZA-Th-Di9"/>
                         <outlet property="headerView" destination="7Ct-jP-zPN" id="NXV-qC-DW2"/>
                         <outlet property="tableViewOutlet" destination="AvD-KQ-jzX" id="qK2-nn-By8"/>
                     </connections>
