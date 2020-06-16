@@ -10,13 +10,12 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     
-    let addViewController = AddViewController()
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var addButton: UIButton!
     
-    var currentDate: Date?
+    let test = ParseData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,24 +25,27 @@ class PopUpViewController: UIViewController {
     }
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
-        dismiss(animated: true) {
-            self.currentDate = self.datePicker.date
-//            guard let nonOptionalDate = self.currentDate?.description else{return}
-            self.addViewController.addButtonTitle(self.currentDate?.description)
-//            UserDefaults.standard.set(nonOptionalDate, forKey: "currentDate")
-            
-        }
         
+        let currentDate = datePicker.date
+        let dateFormater = DateFormatter()
+        dateFormater.timeZone = TimeZone(abbreviation: "MSK")
+        dateFormater.locale = NSLocale.current
+        dateFormater.dateFormat = "dd MMMM HH:mm"
+        let strDate = dateFormater.string(from: currentDate)
+        UserDefaults.standard.set(strDate, forKey: "currentDate")
+        
+//        let defaultDate = datePicker.date.description
+//        UserDefaults.standard.set(defaultDate, forKey: "defaultDate")
+        
+        let name = Notification.Name(rawValue: datePickerKey)
+        NotificationCenter.default.post(name: name, object: nil)
+        
+        
+        dismiss(animated: true, completion: nil)
     }
     
     
     func customAddButton(){
-        
         addButton.layer.cornerRadius = 7
-//        backView.layer.cornerRadius = 20
-        
-        
     }
-    
-    
 }

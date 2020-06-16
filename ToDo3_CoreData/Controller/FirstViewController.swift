@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         collectionViewOutlet.delegate = collectionView
         collectionView.delegateVC = self
         paddindCells()
-        customButton()
+        customButton(addButton)
         customNavBar()
         coreDataManager.fetchCoreData { (category, error) in
             if error != nil{
@@ -46,17 +46,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func customButton(){
-        addButton.layer.cornerRadius = addButton.bounds.size.width / 2
-        addButton.clipsToBounds = true
-        addButton.layer.shadowOpacity = 1
-        addButton.layer.shadowRadius = 3
-        addButton.layer.shadowOffset = .zero
-        addButton.layer.shadowPath = UIBezierPath(ovalIn: addButton.bounds).cgPath
+    func customButton(_ button: UIButton){
+        button.layer.cornerRadius = button.bounds.size.width / 2
+        button.clipsToBounds = true
+        button.layer.shadowOpacity = 1
+        button.layer.shadowRadius = 3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowPath = UIBezierPath(ovalIn: button.bounds).cgPath
         
     }
     func customNavBar(){
-        
+        navigationItem.title = "Lists"
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         

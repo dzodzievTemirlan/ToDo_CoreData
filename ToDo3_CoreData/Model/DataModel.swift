@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct CategoryData: Codable{
+    let Category: [Items]
+}
+
+struct Items: Codable{
+    let label: String
+    let image: String
+}

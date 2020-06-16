@@ -8,48 +8,38 @@
 
 import UIKit
 
+protocol NextVCDelegate {
+    func nextVC(_ collectionView: CollectionView ,_ indexPath: IndexPath)
+}
+
 private let reuseIdentifier = "Cell"
-private let reuseHeader = "Header"
+
 
 class CollectionView: UICollectionView, UICollectionViewDataSource{
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        let head = contentOffset.y
-//        print(head)
-//
-//    }
-    
-    
+    var items: [Category]!
+    let coreDataManager = CoreDataManager()
+    var delegateVC: NextVCDelegate?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  8
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ReusableCell
-        
+        cell.categoryTitle.text = items[indexPath.row].label
+        cell.categoryImage.image = UIImage(named: items[indexPath.row].image!)
         cell.backgroundColor = .white
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 10).cgPath
         cell.layer.shadowRadius = 5
         cell.layer.shadowOffset = .zero
-        
-        cell.categoryTitle.text = "ALL"
-        cell.countTask.text = "25 tasks"
-        cell.image.image = UIImage(named: "homeImage")
-        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeader, for: indexPath) as! ReusableHeader
-        header.header.text = "Lists"
-        
-        return header
-    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegateVC?.nextVC(self, indexPath)
+    }
 }
 extension UICollectionView: UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

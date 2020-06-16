@@ -1,7 +1,90 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BgQ-Kf-wv0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Category Pop Up View Controller-->
+        <scene sceneID="0Ia-Wa-GDD">
+            <objects>
+                <viewController storyboardIdentifier="categoryPopup" id="BgQ-Kf-wv0" customClass="CategoryPopUpViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNm-WU-Cti">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zy-nW-Wk0">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sm7-91-pKy">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-ok-2VU">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <color key="backgroundColor" red="0.38823529411764707" green="0.52156862745098043" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="5bx-RD-9mZ"/>
+                                                    <constraint firstAttribute="width" secondItem="sXN-ok-2VU" secondAttribute="height" multiplier="6:1" id="A29-OP-htL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9t-cI-aCj">
+                                                <rect key="frame" x="25" y="53" width="250" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="HOQ-Dy-CKl"/>
+                                                    <constraint firstAttribute="width" secondItem="M9t-cI-aCj" secondAttribute="height" multiplier="25:16" id="hJ5-it-00V"/>
+                                                    <constraint firstAttribute="width" constant="250" id="k7g-22-PaA"/>
+                                                </constraints>
+                                            </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c97-Fv-7St">
+                                                <rect key="frame" x="125" y="216" width="50" height="34"/>
+                                                <color key="backgroundColor" red="0.38823529411764707" green="0.52156862745098043" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="sAz-3q-O3z"/>
+                                                </constraints>
+                                                <state key="normal" title="Add">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="BgQ-Kf-wv0" eventType="touchUpInside" id="h1m-oV-GE2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sXN-ok-2VU" firstAttribute="leading" secondItem="Sm7-91-pKy" secondAttribute="leading" id="1kX-HK-b5T"/>
+                                            <constraint firstAttribute="trailing" secondItem="sXN-ok-2VU" secondAttribute="trailing" id="QmZ-6s-bCE"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Sm7-91-pKy" secondAttribute="trailing" id="9UJ-Ve-d3N"/>
+                                    <constraint firstItem="Sm7-91-pKy" firstAttribute="leading" secondItem="1Zy-nW-Wk0" secondAttribute="leading" id="Bhb-ST-fac"/>
+                                    <constraint firstAttribute="height" constant="250" id="LZR-kC-2Kr"/>
+                                    <constraint firstAttribute="width" constant="300" id="QHm-QX-Xzk"/>
+                                    <constraint firstItem="Sm7-91-pKy" firstAttribute="top" secondItem="1Zy-nW-Wk0" secondAttribute="top" id="bIz-ZR-gOi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sm7-91-pKy" secondAttribute="bottom" id="dOE-GN-7ek"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1Zy-nW-Wk0" firstAttribute="centerX" secondItem="RNm-WU-Cti" secondAttribute="centerX" id="6aS-Oe-aGd"/>
+                            <constraint firstItem="1Zy-nW-Wk0" firstAttribute="centerY" secondItem="RNm-WU-Cti" secondAttribute="centerY" id="C4e-Yd-PrO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fsm-r6-Hjh"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButtonOutlet" destination="c97-Fv-7St" id="Cj8-vu-mDd"/>
+                        <outlet property="categoryPicker" destination="M9t-cI-aCj" id="ArI-Cx-5tZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhK-Dg-hAB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.144927536231885" y="81.696428571428569"/>
+        </scene>
+    </scenes>
 </document>
