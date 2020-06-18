@@ -14,7 +14,6 @@ class CoreDataManager {
     func saveData(_ list: Items){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appDelegate.persistentContainer.viewContext
-        
         let category = Category(context: context)
         category.label = list.label
         category.image = list.image
@@ -26,7 +25,7 @@ class CoreDataManager {
     }
     
     
-    func fetchCoreData(completion: @escaping(_ category: [Category]?,_ error: Error?)-> Void){
+    func fetchCategories(completion: @escaping(_ category: [Category]?,_ error: Error?)-> Void){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appDelegate.persistentContainer.viewContext
         let request: NSFetchRequest<Category> = Category.fetchRequest()
@@ -52,7 +51,7 @@ class CoreDataManager {
         taskCategory.done = false
         
         
-        fetchCoreData { (categories, error) in
+        fetchCategories { (categories, error) in
             guard let unwrappedCategories = categories else{return}
             for category in unwrappedCategories where category.label == categoryName{
                 taskCategory.parentCategory = category

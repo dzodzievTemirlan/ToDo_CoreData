@@ -15,9 +15,9 @@ class OneCategoryViewController: UIViewController{
     let firstViewController = FirstViewController()
     var categoryTitle: String?
     var categoryimage: String?
-    var tasksSet: [CatTask]?
     let coreDataManager = CoreDataManager()
     let tableViewClass = TableView()
+
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableViewOutlet: TableView!
@@ -28,9 +28,10 @@ class OneCategoryViewController: UIViewController{
     @IBOutlet weak var taskCountOutlet: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerTitles(categoryTitle, categoryimage)
+        headerTitles(categoryTitle, categoryimage, tableViewClass.countTask)
         firstViewController.customButton(addButtonOutlet)
         tableViewOutlet.delegate = tableViewClass
         tableViewOutlet.dataSource = tableViewClass
@@ -45,11 +46,12 @@ class OneCategoryViewController: UIViewController{
     }
     
     
-    func headerTitles(_ title: String?, _ image: String?){
+    func headerTitles(_ title: String?, _ image: String?, _ count: Int){
         guard let titlelUnwraped = title else {return}
         guard let imageUnwraped = image else {return}
         categoryTitleOutlet.text = titlelUnwraped
         categoryImageOutlet.image = UIImage(named: imageUnwraped)
+        taskCountOutlet.text = String("\(count) tasks")
         tableViewOutlet.layer.cornerRadius = 20
     }
     @objc func updateTable(_ notification: Notification){

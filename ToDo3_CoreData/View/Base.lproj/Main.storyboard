@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="collectionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Drk-d5-AKK" customClass="ReusableCell" customModule="ToDo3_CoreData" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Drk-d5-AKK" customClass="CollectionViewCell" customModule="ToDo3_CoreData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mbr-J1-eP1">
@@ -71,12 +71,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+            <point key="canvasLocation" x="1048" y="115"/>
         </scene>
         <!--New Task-->
         <scene sceneID="2Qc-ZH-zXf">
             <objects>
-                <viewController storyboardIdentifier="addNewTask" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ui1-pB-y8u" customClass="AddViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNewTask" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ui1-pB-y8u" customClass="AddTaskViewController" customModule="ToDo3_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXA-J7-KAz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,17 +94,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TUf-mr-sgH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="309"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIB-vQ-hg8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="154.5"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-G2-GO5">
-                                                                        <rect key="frame" x="0.0" y="168" width="414" height="168"/>
+                                                                        <rect key="frame" x="0.0" y="154.5" width="414" height="154.5"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What are you planning?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4k-Dy-f0Y">
-                                                                                <rect key="frame" x="32" y="59" width="350" height="50"/>
+                                                                                <rect key="frame" x="32" y="52.5" width="350" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="79J-O0-1U0"/>
                                                                                     <constraint firstAttribute="height" constant="50" id="rI0-YO-9T8"/>
@@ -131,13 +131,13 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmj-TR-TNj">
-                                                                <rect key="frame" x="0.0" y="336" width="414" height="112"/>
+                                                                <rect key="frame" x="0.0" y="309" width="414" height="139"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shC-j6-Vbb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gs-Cu-DSy">
-                                                                                <rect key="frame" x="26" y="0.0" width="360" height="24"/>
+                                                                                <rect key="frame" x="26" y="0.0" width="360" height="25"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                 <inset key="titleEdgeInsets" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
@@ -145,7 +145,6 @@
                                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                                 <connections>
-                                                                                    <action selector="addDate:" destination="Ui1-pB-y8u" eventType="touchUpInside" id="rVP-fa-rwd"/>
                                                                                     <segue destination="7tL-kZ-VQe" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="cq1-NO-zYC"/>
                                                                                 </connections>
                                                                             </button>
@@ -159,7 +158,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-cn-ftP">
-                                                                        <rect key="frame" x="0.0" y="44" width="414" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="45" width="414" height="24"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww0-ZL-Usd">
                                                                                 <rect key="frame" x="28" y="0.0" width="358" height="24"/>
@@ -180,10 +179,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kX-l9-LjO">
-                                                                        <rect key="frame" x="0.0" y="88" width="414" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="89" width="414" height="50"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKU-H5-0Ay">
-                                                                                <rect key="frame" x="28" y="0.0" width="358" height="24"/>
+                                                                                <rect key="frame" x="28" y="0.0" width="358" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                 <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
@@ -191,7 +190,6 @@
                                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                                 <connections>
-                                                                                    <action selector="addCategory:" destination="Ui1-pB-y8u" eventType="touchUpInside" id="Qtx-VA-Eub"/>
                                                                                     <segue destination="7wU-y7-NEc" kind="presentation" identifier="popUpCat" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="eCV-1u-mY4"/>
                                                                                 </connections>
                                                                             </button>
@@ -308,28 +306,28 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DaP-7H-4CY"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vgz-ao-5PN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsd-Xa-Ycc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="170" y="115"/>
         </scene>
-        <!--PopUp-->
+        <!--DatePIckerPopup-->
         <scene sceneID="pGm-sa-sw0">
             <objects>
-                <viewControllerPlaceholder storyboardName="PopUp" id="7tL-kZ-VQe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DatePIckerPopup" id="7tL-kZ-VQe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmJ-IG-qdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.913043478261" y="860.49107142857144"/>
+            <point key="canvasLocation" x="1859" y="670"/>
         </scene>
-        <!--PopUpCategory-->
+        <!--CategoryPickerPopup-->
         <scene sceneID="GUd-3I-hcZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="PopUpCategory" id="7wU-y7-NEc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CategoryPickerPopup" id="7wU-y7-NEc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxb-Yn-eCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979" y="954"/>
+            <point key="canvasLocation" x="1901" y="1043"/>
         </scene>
     </scenes>
     <resources>

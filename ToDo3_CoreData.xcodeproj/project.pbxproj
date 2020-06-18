@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7944844B249AAE7500FBAB71 /* FirstStartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944844A249AAE7400FBAB71 /* FirstStartService.swift */; };
 		794F0F2E248FA9F2006EECA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F2D248FA9F2006EECA1 /* AppDelegate.swift */; };
 		794F0F30248FA9F2006EECA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F2F248FA9F2006EECA1 /* SceneDelegate.swift */; };
 		794F0F32248FA9F2006EECA1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F31248FA9F2006EECA1 /* FirstViewController.swift */; };
@@ -14,24 +15,25 @@
 		794F0F38248FA9F2006EECA1 /* ToDo3_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F36248FA9F2006EECA1 /* ToDo3_CoreData.xcdatamodeld */; };
 		794F0F3A248FA9F4006EECA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794F0F39248FA9F4006EECA1 /* Assets.xcassets */; };
 		794F0F3D248FA9F4006EECA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794F0F3B248FA9F4006EECA1 /* LaunchScreen.storyboard */; };
-		794F0F47248FB15C006EECA1 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F46248FB15C006EECA1 /* ReusableCell.swift */; };
+		794F0F47248FB15C006EECA1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F46248FB15C006EECA1 /* CollectionViewCell.swift */; };
 		794F0F4B248FC6AE006EECA1 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F4A248FC6AE006EECA1 /* CollectionView.swift */; };
 		794F0F4F2490ADCF006EECA1 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F4E2490ADCF006EECA1 /* TableView.swift */; };
-		794F0F512490ADFB006EECA1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F502490ADFB006EECA1 /* SecondViewController.swift */; };
+		794F0F512490ADFB006EECA1 /* OneCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F502490ADFB006EECA1 /* OneCategoryViewController.swift */; };
 		794F0F532490F8CC006EECA1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F522490F8CC006EECA1 /* TableViewCell.swift */; };
-		794F0F552492052C006EECA1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F542492052C006EECA1 /* AddViewController.swift */; };
+		794F0F552492052C006EECA1 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F0F542492052C006EECA1 /* AddTaskViewController.swift */; };
 		7971CB50249750F40060227F /* CategoryPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971CB4F249750F40060227F /* CategoryPopUpViewController.swift */; };
 		7985CB512493D2BF00354FBB /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7985CB502493D2BE00354FBB /* category.json */; };
 		7985CB532493D2F300354FBB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985CB522493D2F300354FBB /* DataModel.swift */; };
 		7985CB562493D38C00354FBB /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985CB552493D38C00354FBB /* ParseData.swift */; };
 		7985CB5824942EBD00354FBB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985CB5724942EBD00354FBB /* CoreDataManager.swift */; };
-		7985CB5B24966DF100354FBB /* TaskStroryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7985CB5A24966DF000354FBB /* TaskStroryboard.storyboard */; };
-		7985CB5D2497480A00354FBB /* PopUpCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7985CB5C2497480A00354FBB /* PopUpCategory.storyboard */; };
+		7985CB5B24966DF100354FBB /* OneCategoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7985CB5A24966DF000354FBB /* OneCategoryStoryboard.storyboard */; };
+		7985CB5D2497480A00354FBB /* CategoryPickerPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7985CB5C2497480A00354FBB /* CategoryPickerPopup.storyboard */; };
 		79BA2A312492AA10006DE940 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA2A302492AA10006DE940 /* PopUpViewController.swift */; };
-		79BA2A332492B4CD006DE940 /* PopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BA2A322492B4CD006DE940 /* PopUp.storyboard */; };
+		79BA2A332492B4CD006DE940 /* DatePIckerPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BA2A322492B4CD006DE940 /* DatePIckerPopup.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7944844A249AAE7400FBAB71 /* FirstStartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartService.swift; sourceTree = "<group>"; };
 		794F0F2A248FA9F2006EECA1 /* ToDo3_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo3_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794F0F2D248FA9F2006EECA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794F0F2F248FA9F2006EECA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,21 +43,21 @@
 		794F0F39248FA9F4006EECA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		794F0F3C248FA9F4006EECA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794F0F3E248FA9F4006EECA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		794F0F46248FB15C006EECA1 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		794F0F46248FB15C006EECA1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		794F0F4A248FC6AE006EECA1 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		794F0F4E2490ADCF006EECA1 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		794F0F502490ADFB006EECA1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		794F0F502490ADFB006EECA1 /* OneCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCategoryViewController.swift; sourceTree = "<group>"; };
 		794F0F522490F8CC006EECA1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		794F0F542492052C006EECA1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		794F0F542492052C006EECA1 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		7971CB4F249750F40060227F /* CategoryPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPopUpViewController.swift; sourceTree = "<group>"; };
 		7985CB502493D2BE00354FBB /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		7985CB522493D2F300354FBB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		7985CB552493D38C00354FBB /* ParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
 		7985CB5724942EBD00354FBB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		7985CB5A24966DF000354FBB /* TaskStroryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskStroryboard.storyboard; sourceTree = "<group>"; };
-		7985CB5C2497480A00354FBB /* PopUpCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpCategory.storyboard; sourceTree = "<group>"; };
+		7985CB5A24966DF000354FBB /* OneCategoryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OneCategoryStoryboard.storyboard; sourceTree = "<group>"; };
+		7985CB5C2497480A00354FBB /* CategoryPickerPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryPickerPopup.storyboard; sourceTree = "<group>"; };
 		79BA2A302492AA10006DE940 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		79BA2A322492B4CD006DE940 /* PopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopUp.storyboard; sourceTree = "<group>"; };
+		79BA2A322492B4CD006DE940 /* DatePIckerPopup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DatePIckerPopup.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				794F0F31248FA9F2006EECA1 /* FirstViewController.swift */,
-				794F0F502490ADFB006EECA1 /* SecondViewController.swift */,
-				794F0F542492052C006EECA1 /* AddViewController.swift */,
+				794F0F502490ADFB006EECA1 /* OneCategoryViewController.swift */,
+				794F0F542492052C006EECA1 /* AddTaskViewController.swift */,
 				794F0F4E2490ADCF006EECA1 /* TableView.swift */,
 				794F0F4A248FC6AE006EECA1 /* CollectionView.swift */,
 				7971CB4F249750F40060227F /* CategoryPopUpViewController.swift */,
@@ -119,11 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				794F0F33248FA9F2006EECA1 /* Main.storyboard */,
-				7985CB5A24966DF000354FBB /* TaskStroryboard.storyboard */,
-				7985CB5C2497480A00354FBB /* PopUpCategory.storyboard */,
-				79BA2A322492B4CD006DE940 /* PopUp.storyboard */,
+				7985CB5A24966DF000354FBB /* OneCategoryStoryboard.storyboard */,
+				7985CB5C2497480A00354FBB /* CategoryPickerPopup.storyboard */,
+				79BA2A322492B4CD006DE940 /* DatePIckerPopup.storyboard */,
 				794F0F522490F8CC006EECA1 /* TableViewCell.swift */,
-				794F0F46248FB15C006EECA1 /* ReusableCell.swift */,
+				794F0F46248FB15C006EECA1 /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,6 +136,7 @@
 				7985CB522493D2F300354FBB /* DataModel.swift */,
 				7985CB552493D38C00354FBB /* ParseData.swift */,
 				7985CB5724942EBD00354FBB /* CoreDataManager.swift */,
+				7944844A249AAE7400FBAB71 /* FirstStartService.swift */,
 				794F0F36248FA9F2006EECA1 /* ToDo3_CoreData.xcdatamodeld */,
 			);
 			path = Model;
@@ -197,13 +200,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7985CB5B24966DF100354FBB /* TaskStroryboard.storyboard in Resources */,
+				7985CB5B24966DF100354FBB /* OneCategoryStoryboard.storyboard in Resources */,
 				794F0F3D248FA9F4006EECA1 /* LaunchScreen.storyboard in Resources */,
-				7985CB5D2497480A00354FBB /* PopUpCategory.storyboard in Resources */,
+				7985CB5D2497480A00354FBB /* CategoryPickerPopup.storyboard in Resources */,
 				794F0F3A248FA9F4006EECA1 /* Assets.xcassets in Resources */,
 				7985CB512493D2BF00354FBB /* category.json in Resources */,
 				794F0F35248FA9F2006EECA1 /* Main.storyboard in Resources */,
-				79BA2A332492B4CD006DE940 /* PopUp.storyboard in Resources */,
+				79BA2A332492B4CD006DE940 /* DatePIckerPopup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,14 +218,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				794F0F32248FA9F2006EECA1 /* FirstViewController.swift in Sources */,
-				794F0F47248FB15C006EECA1 /* ReusableCell.swift in Sources */,
+				794F0F47248FB15C006EECA1 /* CollectionViewCell.swift in Sources */,
 				794F0F4B248FC6AE006EECA1 /* CollectionView.swift in Sources */,
 				7985CB5824942EBD00354FBB /* CoreDataManager.swift in Sources */,
-				794F0F552492052C006EECA1 /* AddViewController.swift in Sources */,
-				794F0F512490ADFB006EECA1 /* SecondViewController.swift in Sources */,
+				794F0F552492052C006EECA1 /* AddTaskViewController.swift in Sources */,
+				794F0F512490ADFB006EECA1 /* OneCategoryViewController.swift in Sources */,
 				794F0F2E248FA9F2006EECA1 /* AppDelegate.swift in Sources */,
 				7971CB50249750F40060227F /* CategoryPopUpViewController.swift in Sources */,
 				7985CB532493D2F300354FBB /* DataModel.swift in Sources */,
+				7944844B249AAE7500FBAB71 /* FirstStartService.swift in Sources */,
 				794F0F532490F8CC006EECA1 /* TableViewCell.swift in Sources */,
 				79BA2A312492AA10006DE940 /* PopUpViewController.swift in Sources */,
 				794F0F38248FA9F2006EECA1 /* ToDo3_CoreData.xcdatamodeld in Sources */,

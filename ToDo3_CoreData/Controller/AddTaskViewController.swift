@@ -12,11 +12,10 @@ let datePickerKey = "com.dztemirlan.DatePickerKey"
 let categoryPickerKey = "com.dztemirlan.CategoryPicker"
 let categoryTitleKey = "com.dztemirlan.CategoryTitle"
 
-class AddViewController: UIViewController {
+class AddTaskViewController: UIViewController {
     
     let datePickerName = Notification.Name(rawValue: datePickerKey)
     let categoryPickerName = Notification.Name(rawValue: categoryPickerKey)
-    let categoryTitleName = Notification.Name(rawValue: categoryTitleKey)
     let categoryPopUp = CategoryPopUpViewController()
     let coreDataManager = CoreDataManager()
     var titleLabel : String?
@@ -31,18 +30,14 @@ class AddViewController: UIViewController {
         registerForKeyboardNotification()
         chosenDate()
         chosenCategory()
-        categoryButtonTitle()
-        
+        if titleLabel != nil{
+            addCategoryOutlet.setTitle(titleLabel, for: .normal)
+        }
     }
     deinit {
         removeNotification()
     }
     
-    @IBAction func addDate(_ sender: UIButton) {
-    }
-    
-    @IBAction func addCategory(_ sender: UIButton) {
-    }
     
     @IBAction func createTask(_ sender: UIButton) {
         textField.resignFirstResponder()
@@ -56,13 +51,14 @@ class AddViewController: UIViewController {
         guard !textField.text!.isEmpty else{showAlert("Add some note", nil);return}
         guard let name = textField.text else {return}
         guard let date = UserDefaults.standard.string(forKey: "currentDate") else{return}
-        guard let category = UserDefaults.standard.string(forKey: "currentCategory") else{return}
+        guard let category = addCategoryOutlet.titleLabel?.text else{return}
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "MSK")
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "dd MMMM HH:mm"
         guard let dateUnwrapped = dateFormatter.date(from: date) else{return}
+        
         coreDataManager.saveTask(name, dateUnwrapped, category)
     }
     
@@ -77,19 +73,12 @@ class AddViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     func chosenDate(){
         NotificationCenter.default.addObserver(self, selector: #selector(dateChoose), name: datePickerName, object: nil)
     }
-    
     func chosenCategory(){
         NotificationCenter.default.addObserver(self, selector: #selector(categoryChoose), name: categoryPickerName, object: nil)
     }
-    
-    func categoryButtonTitle(){
-        NotificationCenter.default.addObserver(self, selector: #selector(categoryTitle), name: categoryTitleName, object: nil)
-    }
-    
     
     
     @objc func kbWillShow(_ notification: Notification){
@@ -110,17 +99,12 @@ class AddViewController: UIViewController {
         guard let currentButtonTitle = UserDefaults.standard.string(forKey: "currentCategory") else{return}
         addCategoryOutlet.setTitle(currentButtonTitle, for: .normal)
     }
-    @objc func categoryTitle(_ notification: Notification){
-        guard let title = titleLabel else {return}
-        addCategoryOutlet.setTitle(title, for: .normal)
-    }
     
     func removeNotification(){
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: datePickerName, object: nil)
         NotificationCenter.default.removeObserver(self, name: categoryPickerName, object: nil)
-        NotificationCenter.default.removeObserver(self, name: categoryTitleName, object: nil)
     }
 }
 

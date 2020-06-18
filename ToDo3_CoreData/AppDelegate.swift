@@ -15,27 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        if UserDefaults.standard.bool(forKey: "isStarted") {
-            print("App already started")
-        }else {
-            UserDefaults.standard.set(true,forKey: "isStarted")
-            let parseData = ParseData()
-            let coreDataManager = CoreDataManager()
-            parseData.fetchingData { (categoryData, error) in
-                if error != nil{
-                    print("error with parsing data")
-                }else {
-                    guard let list = categoryData else {return}
-                    for i in list.Category{
-                        DispatchQueue.main.async {
-                            coreDataManager.saveData(i)
-                        }
-                    }
-                }
-            }
-        }
-        
         return true
     }
     

@@ -10,10 +10,11 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    let secondViewcontroller = SecondViewController()
+    let secondViewcontroller = OneCategoryViewController()
     let coreDateManager = CoreDataManager()
     var taskNumber: CatTask?
     var categoryName: String?
+
     @IBOutlet weak var checkboxOutlet: UIButton!
     @IBOutlet weak var noteName: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

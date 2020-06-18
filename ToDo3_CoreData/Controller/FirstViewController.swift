@@ -7,33 +7,39 @@
 //
 
 import UIKit
-class ViewController: UIViewController {
+
+let updateCollectionViewKey = "com.dztemirlan.DataFetched"
+
+class FirstViewController: UIViewController {
+    
+    
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
-    var items = [Category]()
-    let coreDataManager = CoreDataManager()
-    let addViewController = AddViewController()
+    
+    var categories = [Category]()
+    let firstStartService =  FirstStartService()
+    let addViewController = AddTaskViewController()
     let collectionView = CollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionViewOutlet.register(ReusableCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionViewOutlet.dataSource = collectionView
-        collectionViewOutlet.delegate = collectionView
+        collectionViewOutlet.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        self.collectionViewOutlet.dataSource = self.collectionView
+        self.collectionViewOutlet.delegate = self.collectionView
+        getData()
+        updateCollectionViewNotification()
         collectionView.delegateVC = self
         paddindCells()
-        customButton(addButton)
         customNavBar()
-        coreDataManager.fetchCoreData { (category, error) in
-            if error != nil{
-                print("Error with Fetchingdata")
-            }else{
-                self.items = category!
-                self.collectionView.items = self.items
-            }
-        }
+        customButton(addButton)
         //                print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
@@ -42,9 +48,12 @@ class ViewController: UIViewController {
             let padding:CGFloat = 20
             layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
             layout.minimumLineSpacing = 30
-            
         }
     }
+    fileprivate func updateCollectionViewNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollecctionView), name: Notification.Name(updateCollectionViewKey), object: nil)
+    }
+    
     
     func customButton(_ button: UIButton){
         button.layer.cornerRadius = button.bounds.size.width / 2
@@ -64,15 +73,32 @@ class ViewController: UIViewController {
         
     }
     
+    
+    func getData(){
+        firstStartService.fetchData { (category) in
+            guard let allCategories = category else{return}
+            self.categories = allCategories
+            self.collectionView.items = self.categories
+            NotificationCenter.default.post(name: Notification.Name(rawValue: updateCollectionViewKey), object: self)
+            print("data get")
+        }
+        
+    }
+    
+    @objc func updateCollecctionView(_ notification: Notification){
+        collectionView.reloadData()
+        print("Updated")
+    }
 }
 
-extension ViewController: NextVCDelegate{
+extension FirstViewController: SecondViewControllerDelegate{
     func nextVC(_ collectionView: CollectionView, _ indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "TaskStroryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "TableView") as! SecondViewController
+        let storyboard = UIStoryboard(name: "OneCategoryStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "TableView") as! OneCategoryViewController
         self.navigationController?.show(vc, sender: self )
-        vc.catTitle = items[indexPath.row].label
-        vc.catImage = items[indexPath.row].image!
+        vc.categoryTitle = categories[indexPath.row].label
+        vc.categoryimage = categories[indexPath.row].image!
+        
     }
 }
 

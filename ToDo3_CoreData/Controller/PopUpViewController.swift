@@ -15,16 +15,13 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var addButton: UIButton!
     
-    let test = ParseData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customAddButton()
-        
     }
+    
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        
         
         let currentDate = datePicker.date
         let dateFormater = DateFormatter()
@@ -33,10 +30,6 @@ class PopUpViewController: UIViewController {
         dateFormater.dateFormat = "dd MMMM HH:mm"
         let strDate = dateFormater.string(from: currentDate)
         UserDefaults.standard.set(strDate, forKey: "currentDate")
-        
-//        let defaultDate = datePicker.date.description
-//        UserDefaults.standard.set(defaultDate, forKey: "defaultDate")
-        
         let name = Notification.Name(rawValue: datePickerKey)
         NotificationCenter.default.post(name: name, object: nil)
         

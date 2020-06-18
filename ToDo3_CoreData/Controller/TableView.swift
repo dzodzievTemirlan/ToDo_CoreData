@@ -15,8 +15,10 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
     
     var tasksLast: [CatTask]!
     var taskTitle: String?
+    var countTask = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        countTask = tasksLast.count
         return tasksLast.count
     }
     
@@ -42,9 +44,9 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
     }
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        
-//        
-//        
-//        
+//
+//
+//
 //    }
     
     private func dateFormater(task: [CatTask],_ index: IndexPath)->String{

@@ -20,16 +20,17 @@ class CategoryPopUpViewController: UIViewController {
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
         customAddButton()
-        coreDataManager.fetchCoreData { (category, error) in
+        coreDataManager.fetchCategories { (category, error) in
             if error != nil{
                 print("error with fething category labels")
             }else{
-                for i in 0...7{
-                    guard let unwrappedLabel = category?[i].label else{return}
-                    if unwrappedLabel == "All"{
+                guard let count = category?.count else{return}
+                for i in 0..<count{
+                    guard let unwrappedCategory = category?[i].label else{return}
+                    if unwrappedCategory == "All"{
                         continue
                     }else{
-                        self.categoryLabels.append(unwrappedLabel)
+                        self.categoryLabels.append(unwrappedCategory)
                     }
                 }
             }
@@ -54,7 +55,7 @@ extension CategoryPopUpViewController: UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 7
+        return categoryLabels.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
