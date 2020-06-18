@@ -44,7 +44,7 @@ class AddTaskViewController: UIViewController {
         saveAction()
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name:Notification.Name(rawValue: updateTableViewKey), object: nil)
-        
+        NotificationCenter.default.post(name:Notification.Name(rawValue: updateCollectionViewKey), object: nil)
     }
     
     func saveAction(){

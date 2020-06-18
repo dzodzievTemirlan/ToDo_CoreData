@@ -28,14 +28,15 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="346"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="allImage" translatesAutoresizingMaskIntoConstraints="NO" id="wZS-4I-5bd">
-                                                                <rect key="frame" x="18" y="150" width="98" height="77.5"/>
+                                                                <rect key="frame" x="23" y="152" width="80" height="60"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="wZS-4I-5bd" secondAttribute="height" multiplier="29:23" id="SPt-bw-g1e"/>
+                                                                    <constraint firstAttribute="width" secondItem="wZS-4I-5bd" secondAttribute="height" multiplier="36:23" constant="-13.913043478260875" id="SPt-bw-g1e"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBU-Vr-F8r">
-                                                                <rect key="frame" x="48" y="239.5" width="366" height="36"/>
+                                                                <rect key="frame" x="48" y="224" width="366" height="51.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -49,12 +50,12 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="ZBU-Vr-F8r" firstAttribute="leading" secondItem="nae-fI-2ov" secondAttribute="leadingMargin" constant="40" id="9Lm-x6-fYu"/>
-                                                            <constraint firstItem="wZS-4I-5bd" firstAttribute="leading" secondItem="nae-fI-2ov" secondAttribute="leadingMargin" constant="10" id="AKt-oH-pqx"/>
+                                                            <constraint firstItem="wZS-4I-5bd" firstAttribute="leading" secondItem="nae-fI-2ov" secondAttribute="leadingMargin" constant="15" id="AKt-oH-pqx"/>
                                                             <constraint firstAttribute="trailing" secondItem="PQ7-uK-qhq" secondAttribute="trailing" id="Bpq-kY-vSk"/>
                                                             <constraint firstAttribute="trailing" secondItem="ZBU-Vr-F8r" secondAttribute="trailing" id="Crb-yW-pLX"/>
                                                             <constraint firstItem="PQ7-uK-qhq" firstAttribute="top" secondItem="ZBU-Vr-F8r" secondAttribute="bottom" constant="2" id="SHy-nR-aEk"/>
                                                             <constraint firstAttribute="bottomMargin" secondItem="PQ7-uK-qhq" secondAttribute="bottom" constant="40" id="T0o-tf-GKP"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="wZS-4I-5bd" secondAttribute="trailing" constant="290" id="TBM-aK-Muk"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="wZS-4I-5bd" secondAttribute="trailing" constant="303" id="TBM-aK-Muk"/>
                                                             <constraint firstItem="PQ7-uK-qhq" firstAttribute="leading" secondItem="nae-fI-2ov" secondAttribute="leadingMargin" constant="30" id="VUJ-1Y-nmH"/>
                                                             <constraint firstItem="wZS-4I-5bd" firstAttribute="top" relation="lessThanOrEqual" secondItem="nae-fI-2ov" secondAttribute="topMargin" constant="100" id="eCM-ou-PO3"/>
                                                             <constraint firstItem="ZBU-Vr-F8r" firstAttribute="top" secondItem="wZS-4I-5bd" secondAttribute="bottomMargin" constant="20" id="sCD-A8-PXf"/>
@@ -244,7 +245,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="allImage" width="512" height="512"/>
+        <image name="allImage" width="50" height="50"/>
         <image name="uncheck" width="50" height="50"/>
     </resources>
 </document>

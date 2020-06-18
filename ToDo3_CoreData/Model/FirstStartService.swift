@@ -28,6 +28,7 @@ class FirstStartService{
                     guard let lists = categoryData else {return}
                     for list in lists.Category{
                         self.coreDataManager.saveData(list)
+                        print("saved data")
                     }
                     
                     
@@ -36,17 +37,19 @@ class FirstStartService{
         }
     }
     
-    func fetchData(_ complitionHandler: @escaping((_ category: [Category]?) -> Void)){
-        firstStart { (bool) in
-            if bool{
-                self.coreDataManager.fetchCategories { (category, error) in
-                    guard let categories = category else {return}
-                    complitionHandler(categories)
-                }
-            }
-        }
-        
-    }
+//    func fetchData(_ complitionHandler: @escaping((_ category: [Category]?) -> Void)){
+//        firstStart { (bool) in
+//            if bool{
+//                self.coreDataManager.fetchCategories { (category, error) in
+//                    guard let categories = category else {return}
+//                    complitionHandler(categories)
+//                    print("fetchData")
+//
+//                }
+//            }
+//        }
+//
+//    }
     
 }
 

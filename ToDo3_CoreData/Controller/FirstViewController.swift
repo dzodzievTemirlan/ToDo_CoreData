@@ -19,6 +19,7 @@ class FirstViewController: UIViewController {
     
     
     var categories = [Category]()
+    let coreDataManager = CoreDataManager()
     let firstStartService =  FirstStartService()
     let addViewController = AddTaskViewController()
     let collectionView = CollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -31,11 +32,13 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateCollectionViewNotification()
+        getData()
+        //        updateCollectionViewNotification()
+        print("ViewDidLoad")
         collectionViewOutlet.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionViewOutlet.dataSource = self.collectionView
         self.collectionViewOutlet.delegate = self.collectionView
-        getData()
-        updateCollectionViewNotification()
         collectionView.delegateVC = self
         paddindCells()
         customNavBar()
@@ -51,7 +54,7 @@ class FirstViewController: UIViewController {
         }
     }
     fileprivate func updateCollectionViewNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateCollecctionView), name: Notification.Name(updateCollectionViewKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: Notification.Name(updateCollectionViewKey), object: nil)
     }
     
     
@@ -75,22 +78,27 @@ class FirstViewController: UIViewController {
     
     
     func getData(){
-        firstStartService.fetchData { (category) in
-            guard let allCategories = category else{return}
-            self.categories = allCategories
-            self.collectionView.items = self.categories
-            NotificationCenter.default.post(name: Notification.Name(rawValue: updateCollectionViewKey), object: self)
-            print("data get")
-        }
         
+        firstStartService.firstStart { (bool) in
+            if bool{
+                print("dataSaved")
+            }
+        }
+        NotificationCenter.default.post(name: Notification.Name(rawValue: updateCollectionViewKey), object: nil)
     }
     
-    @objc func updateCollecctionView(_ notification: Notification){
-        collectionView.reloadData()
-        print("Updated")
+    @objc func updateCollectionView(_ notification: Notification){
+        
+        coreDataManager.fetchCategories {[weak self] (category, error) in
+            guard let allCategories = category else{return}
+            
+            self?.categories = allCategories
+            self?.collectionView.items = self?.categories
+            self?.collectionView.reloadData()
+            print("Updated")
+        }
     }
 }
-
 extension FirstViewController: SecondViewControllerDelegate{
     func nextVC(_ collectionView: CollectionView, _ indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "OneCategoryStoryboard", bundle: nil)
