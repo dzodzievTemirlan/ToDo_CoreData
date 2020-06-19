@@ -13,41 +13,40 @@ class TableView: UITableView, UITableViewDelegate, UITableViewDataSource{
     
     let coreDataManager = CoreDataManager()
     
-    var tasksLast: [CatTask]!
+    var tasksList: [CatTask]!
     var taskTitle: String?
-    var countTask = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countTask = tasksLast.count
-        return tasksLast.count
+        return tasksList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReuseCell", for: indexPath) as! TableViewCell
-        cell.noteName.text = tasksLast[indexPath.row].name
-        cell.dateLabel.text = dateFormater(task: tasksLast, indexPath)
-        cell.taskNumber = tasksLast[indexPath.row]
+        
+        cell.noteName.text = tasksList[indexPath.row].name
+        cell.dateLabel.text = dateFormater(task: tasksList, indexPath)
+        cell.taskNumber = tasksList[indexPath.row]
         cell.categoryName = taskTitle
-        cell.checkboxOutlet.setImage(UIImage(named: checkboxImage(tasksLast, indexPath)), for: .normal)
+        cell.checkboxOutlet.setImage(UIImage(named: checkboxImage(tasksList, indexPath)), for: .normal)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, complition) in
-            self.coreDataManager.deleteTask(self.tasksLast[indexPath.row])
+            self.coreDataManager.deleteTask(self.tasksList[indexPath.row])
             complition(true)
             NotificationCenter.default.post(name: Notification.Name(rawValue: updateTableViewKey), object: nil)
         }
         let swipe = UISwipeActionsConfiguration(actions: [delete])
         return swipe
     }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
-//
-//
-//
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+
+
+
+    }
     
     private func dateFormater(task: [CatTask],_ index: IndexPath)->String{
         guard let currentDate = task[index.row].date else{return "0"}

@@ -17,7 +17,7 @@ class OneCategoryViewController: UIViewController{
     var categoryimage: String?
     let coreDataManager = CoreDataManager()
     let tableViewClass = TableView()
-
+    let collectionViewCell = CollectionViewCell()
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableViewOutlet: TableView!
@@ -31,14 +31,14 @@ class OneCategoryViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerTitles(categoryTitle, categoryimage, tableViewClass.countTask)
+        headerTitles(categoryTitle, categoryimage)
         firstViewController.customButton(addButtonOutlet)
         tableViewOutlet.delegate = tableViewClass
         tableViewOutlet.dataSource = tableViewClass
         tableViewClass.taskTitle = categoryTitle
         guard let currentTitle = categoryTitleOutlet.text else {return}
         coreDataManager.fetchTask(currentTitle) { (tasks) in
-            self.tableViewClass.tasksLast = tasks
+            self.tableViewClass.tasksList = tasks
             
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: Notification.Name(updateTableViewKey), object: nil)
@@ -46,18 +46,17 @@ class OneCategoryViewController: UIViewController{
     }
     
     
-    func headerTitles(_ title: String?, _ image: String?, _ count: Int){
+    func headerTitles(_ title: String?, _ image: String?){
         guard let titlelUnwraped = title else {return}
         guard let imageUnwraped = image else {return}
         categoryTitleOutlet.text = titlelUnwraped
-        categoryImageOutlet.image = UIImage(named: imageUnwraped)
-        taskCountOutlet.text = String("\(count) tasks")
+        categoryImageOutlet.image = UIImage(named: "\(imageUnwraped)2")
         tableViewOutlet.layer.cornerRadius = 20
     }
     @objc func updateTable(_ notification: Notification){
         guard let currentTitle = categoryTitleOutlet.text else {return}
         coreDataManager.fetchTask(currentTitle) { (tasks) in
-            self.tableViewClass.tasksLast = tasks
+            self.tableViewClass.tasksList = tasks
         }
         tableViewOutlet.reloadData()
     }
