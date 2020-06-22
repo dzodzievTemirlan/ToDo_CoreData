@@ -27,6 +27,7 @@ class CollectionView: UICollectionView, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         cell.catTitle = items[indexPath.row].label
+        print(items[indexPath.row].label)
         cell.catImage = items[indexPath.row].image!
         cell.countTasks = items[indexPath.row].task?.count
         cell.backgroundColor = .white
